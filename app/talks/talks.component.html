@@ -1,14 +1,19 @@
-<ActionBar title="My App" class="action-bar"></ActionBar>
+<ActionBar title=" Agenda Codemotion 2017" android.icon="res://icon" android.iconVisibility="always" class="action-bar">
+    <ActionItem tap="search"
+    ios.systemIcon="12" ios.position="left"
+    android.systemIcon="ic_menu_search" android.position="actionBar"></ActionItem>
+</ActionBar>
 <ng-container *ngIf="days$ | async; let days">
-    <TabView selectedIndex="0" sdkExampleTitle sdkToggleNavButton>
+    <TabView selectedIndex="0" sdkExampleTitle sdkToggleNavButton class="tab-view">
         <ng-container *ngFor="let day of days">
             <StackLayout *tabItem="{title: day.name}">
                 <ScrollView>
                     <StackLayout>
                         <StackLayout *ngFor="let hour of keys(day.hours)">
-                            <Label text="{{hour}}" class="m-15"></Label>
+                            <Label text="{{hour}}" class="m-15 hour"></Label>
+                            <StackLayout class="hr-light"></StackLayout>                               
                             <Label text="{{slot.contents.title==' ' ? slot.contents.type : slot.contents.title}}" 
-                                *ngFor="let slot of day.hours.get(hour)" class="m-25" textWrap="true"></Label>
+                                *ngFor="let slot of day.hours.get(hour)" class="m-30 title" textWrap="true"></Label>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>

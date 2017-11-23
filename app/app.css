@@ -1,1 +1,29 @@
 @import "nativescript-theme-core/css/core.light.css";
+
+.hour {
+    font-weight: bold;
+    font-size: 20pt;
+    padding: 10px;
+}
+
+.title {
+    font-size: 18pt;
+}
+
+.action-bar {
+    background-color: #4688F1;
+    color: white;
+}
+
+TabView {
+    tab-text-color: white;
+    selected-tab-text-color: rgb(255, 255, 255);
+    tab-background-color: #4688F1;
+    android-selected-tab-highlight-color: white;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+TabViewItem {
+    font-size: 20;
+}
