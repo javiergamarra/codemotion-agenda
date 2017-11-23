@@ -7,8 +7,8 @@
                     <StackLayout>
                         <StackLayout *ngFor="let hour of keys(day.hours)">
                             <Label text="{{hour}}" class="m-15"></Label>
-                            <Label text="{{slot.contents.title}}" *ngFor="let slot of day.hours.get(hour)" 
-                                class="m-25"></Label>
+                            <Label text="{{slot.contents.title==' ' ? slot.contents.type : slot.contents.title}}" 
+                                *ngFor="let slot of day.hours.get(hour)" class="m-25" textWrap="true"></Label>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
