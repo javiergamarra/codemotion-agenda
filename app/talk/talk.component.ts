@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TalksService } from '../talks/talks.service';
+import { RouterExtensions } from 'nativescript-angular';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -22,7 +23,7 @@ export class TalkComponent implements OnInit {
 
     slot;
 
-    constructor(private talksService: TalksService, private route: ActivatedRoute) {
+    constructor(private talksService: TalksService, private route: ActivatedRoute, private routerExtensions: RouterExtensions) {
     }
 
     ngOnInit(): void {
@@ -31,5 +32,9 @@ export class TalkComponent implements OnInit {
 
     favorite(slot) {
         slot.favorite = true;
+    }
+
+    goBack() {
+        this.routerExtensions.back();        
     }
 }
