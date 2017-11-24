@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 
 @Injectable()
 export class TalksService {
@@ -10,7 +11,13 @@ export class TalksService {
     }
 
     getAllTalks() {
-        return this.http.get('https://www.koliseo.com/codemotion/codemotion-madrid/r4p/5632002325741568/agenda')
+
+        return this.http.get('~/example.json')
+        // return this.http.get('https://www.koliseo.com/codemotion/codemotion-madrid/r4p/5632002325741568/agenda')
+            .do((res: any) => {
+                console.log('Response: ');
+                console.dir(res);
+            })
             .map(x => x.json())
             .map(x => x['days'])
             .map(days => {
