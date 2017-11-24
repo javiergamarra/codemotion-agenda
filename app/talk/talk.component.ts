@@ -6,18 +6,7 @@ import 'rxjs/add/operator/switchMap';
 
 @Component({
     selector: 'agenda-talk',
-    template: `
-		<ActionBar title="Details" class="action-bar"></ActionBar>
-		<FlexboxLayout flexDirection="column" class="page">
-			<FlexboxLayout class="m-15">
-				<Label class="h2" text="{{slot.start}}"></Label>
-				<Label class="h2" text="{{slot.end}}"></Label>
-				<Label class="h2" text="{{slot.title}}" textWrap="true"></Label>
-				<Label class="h2" text="{{slot.type}}"></Label>
-
-				<Button (tap)="favorite(slot)"></Button>
-			</FlexboxLayout>
-		</FlexboxLayout>`,
+    templateUrl: './talk/talk.component.html'
 })
 export class TalkComponent implements OnInit {
 

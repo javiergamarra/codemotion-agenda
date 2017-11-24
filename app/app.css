@@ -27,3 +27,11 @@ TabView {
 TabViewItem {
     font-size: 20;
 }
+
+.center {
+    text-align: center;
+}
+
+.talk-title {
+    width: 100%;
+}
