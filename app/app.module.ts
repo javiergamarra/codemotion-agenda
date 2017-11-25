@@ -7,9 +7,10 @@ import { TalksService } from './talks/talks.service';
 import { AppRoutingModule } from './app.routing';
 import { TalksComponent } from './talks/talks.component';
 import { TalkComponent } from './talk/talk.component';
+import { AvatarComponent } from './avatar/avatar.component';
 
 @NgModule({
-    declarations: [AppComponent, TalksComponent, TalkComponent],
+    declarations: [AppComponent, TalksComponent, TalkComponent, AvatarComponent],
     bootstrap: [AppComponent],
     imports: [NativeScriptModule, NativeScriptHttpModule, AppRoutingModule],
     providers: [TalksService],

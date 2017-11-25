@@ -30,4 +30,8 @@ export class TalkComponent implements OnInit {
     goBack() {
         this.routerExtensions.back();
     }
+
+    goToAuthor(author) {
+        this.routerExtensions.navigate(['avatar', author.avatar]);
+    }
 }
