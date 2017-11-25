@@ -1,11 +1,5 @@
-<ActionBar title=" Agenda Codemotion 2017" android.icon="res://icon" android.iconVisibility="always" class="action-bar">
-	<!--<ActionItem tap="search"
-	            ios.systemIcon="12" ios.position="left"
-	            android.systemIcon="ic_menu_search" android.position="actionBar"></ActionItem>-->
-</ActionBar>
-
+<ActionBar title=" Agenda Codemotion 2017" android.icon="res://icon" android.iconVisibility="always" class="action-bar"></ActionBar>
 <ng-container *ngIf="days$ | async; let days">
-
 	<TabView selectedIndex="0" sdkExampleTitle sdkToggleNavButton class="tab-view">
 		<ng-container *ngFor="let day of days">
 			<StackLayout *tabItem="{title: day.name}">
