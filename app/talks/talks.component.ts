@@ -11,7 +11,6 @@ export class TalksComponent implements OnInit {
     private days$: any;
 
     constructor(private talksService: TalksService, private routerExtensions: RouterExtensions) {
-
     }
 
     keys(map) {
@@ -23,10 +22,7 @@ export class TalksComponent implements OnInit {
     }
 
     goToDetail(slot) {
-        Object.assign(slot, slot.contents)
-        this.routerExtensions.navigate(['talks', slot.id], {queryParams: slot});
+        this.routerExtensions.navigate(['talks', slot.id]);
     }
 
 }
-
-// (selectedIndexChange)="onIndexChanged($event)"

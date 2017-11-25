@@ -6,6 +6,8 @@ import 'rxjs/add/operator/do';
 @Injectable()
 export class TalksService {
 
+    days;
+
     constructor(private http: Http) {
 
     }
@@ -14,10 +16,6 @@ export class TalksService {
 
         return this.http.get('~/example.json')
         // return this.http.get('https://www.koliseo.com/codemotion/codemotion-madrid/r4p/5632002325741568/agenda')
-            .do((res: any) => {
-                console.log('Response: ');
-                console.dir(res);
-            })
             .map(x => x.json())
             .map(x => x['days'])
             .map(days => {
@@ -37,6 +35,24 @@ export class TalksService {
                     day.hours = hours;
                 }
                 return days;
+            })
+            .map(x => {
+                this.days = x;
+                return x;
             });
+    }
+
+    searchById(id) {
+        for (let day of this.days) {
+            for (let track of day.tracks) {
+                for (let slot of track.slots) {
+                    if (slot.id == id.id) {
+                        console.log(JSON.stringify(slot));
+                        return slot;
+                    }
+                }
+            }
+        }
+        return null;
     }
 }

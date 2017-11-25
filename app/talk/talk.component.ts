@@ -16,14 +16,18 @@ export class TalkComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.route.queryParams.subscribe(slot => this.slot = slot);
+        this.route.params.subscribe(id => this.slot = this.talksService.searchById(id));
     }
 
     favorite(slot) {
-        slot.favorite = true;
+        slot.favorite = !slot.favorite;
+    }
+
+    icon(slot) {
+        return slot.favorite == null ? 'ic_menu_star' : 'ic_menu_search';
     }
 
     goBack() {
-        this.routerExtensions.back();        
+        this.routerExtensions.back();
     }
 }
