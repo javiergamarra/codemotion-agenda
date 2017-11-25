@@ -42,4 +42,9 @@ export class AvatarComponent implements OnInit {
         container.removeViewAt(container.getChildCount()-1)
     }
 
+    goBack() {
+        this.backEvent(null);
+        this.routerExtensions.back();
+    }
+
 }
